@@ -66,7 +66,7 @@ stages:
       displayName: Set Production Label, Blue Commit and Green Commit
       name: setvarStep1
       inputs:    
-        azureSubscription: 'azureSubscription'
+        azureSubscription: 'scaadautomationtf'
         scriptType: 'bash'
         scriptLocation: 'inlineScript'
         inlineScript: |
@@ -121,7 +121,7 @@ stages:
       displayName: Deploy the container app to new environment and send 0% traffic to it
       inputs:
         deploymentScope: 'Resource Group'
-        azureResourceManagerConnection: 'azureSubscription'
+        azureResourceManagerConnection: 'scaadautomationtf'
         subscriptionId: '$(SUBSCRIPTIONID)'
         action: 'Create Or Update Resource Group'
         resourceGroupName: '$(RESOURCE_GROUP)'
@@ -170,7 +170,7 @@ stages:
       displayName: Switch traffic to 100% to new environment
       inputs:
         deploymentScope: 'Resource Group'
-        azureResourceManagerConnection: 'azureSubscription'
+        azureResourceManagerConnection: 'scaadautomationtf'
         subscriptionId: '$(SUBSCRIPTIONID)'
         action: 'Create Or Update Resource Group'
         resourceGroupName: '$(RESOURCE_GROUP)'
